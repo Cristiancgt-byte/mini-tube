@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cristianexus - MiniTube</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">Cristianexus <span class="mini">MiniTube</span></div>
+    <div class="search-area">
+      <input id="searchInput" type="search" placeholder="Buscar videos..." />
+    </div>
+    <div class="actions">
+      <button id="uploadBtn" class="btn">Subir video</button>
+      <button id="sampleBtn" class="btn ghost">Cargar ejemplos</button>
+    </div>
+  </header>
+
+  <main id="mainContent" class="container">
+    <aside class="sidebar">
+      <h4>Opciones</h4>
+      <ul>
+        <li><button data-filter="all">Todos</button></li>
+        <li><button data-filter="liked">Me gusta</button></li>
+        <li><button data-filter="mine">Mis subidos</button></li>
+      </ul>
+    </aside>
+
+    <section class="content">
+      <div id="videoGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <div id="playerModal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="close">×</button>
+      <video id="player" controls></video>
+      <div class="video-meta">
+        <h3 id="playerTitle"></h3>
+        <div class="meta-actions">
+          <button id="likeBtn" class="btn">👍 <span id="likeCount">0</span></button>
+          <button id="subBtn" class="btn ghost">Suscribirse</button>
+        </div>
+        <p id="playerDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <input id="fileInput" type="file" accept="video/*" style="display:none" />
+  <script src="app.js"></script>
+</body>
+</html>
